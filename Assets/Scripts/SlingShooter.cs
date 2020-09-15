@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SlingShooter : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class SlingShooter : MonoBehaviour
 
     [SerializeField] private float throwSpeed = 30f;
 
+    private Bird bird;
+    
     private void Start()
     {
         startPos = transform.position;
@@ -20,6 +21,8 @@ public class SlingShooter : MonoBehaviour
         collider.enabled = false;
         Vector2 velocity = startPos - (Vector2) transform.position;
         float distance = Vector2.Distance(startPos, transform.position);
+        
+        bird.Shoot(velocity, distance, throwSpeed);
         
         // Set sling shooter to start position
         gameObject.transform.position = startPos;
@@ -34,5 +37,12 @@ public class SlingShooter : MonoBehaviour
         if (dir.sqrMagnitude > radius)
             dir = dir.normalized * radius;
         transform.position = startPos + dir;
+    }
+
+    public void InitiateBird(Bird bird)
+    {
+        this.bird = bird;
+        this.bird.MoveTo(gameObject.transform.position, gameObject);
+        collider.enabled = true;
     }
 }
