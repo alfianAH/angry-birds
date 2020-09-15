@@ -403,6 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  birdRigidbody: {fileID: 0}
+  birdCollider: {fileID: 0}
 --- !u!4 &832458158
 Transform:
   m_ObjectHideFlags: 0
@@ -551,3 +554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  birdRigidbody: {fileID: 1100297615}
+  birdCollider: {fileID: 1100297614}
