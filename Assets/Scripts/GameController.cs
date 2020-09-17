@@ -10,6 +10,20 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < birds.Count; i++)
+        {
+            birds[i].onBirdDestroyed += ChangeBird;
+        }
         slingShooter.InitiateBird(birds[0]);
+    }
+
+    public void ChangeBird()
+    {
+        birds.RemoveAt(0);
+        
+        if (birds.Count > 0)
+        {
+            slingShooter.InitiateBird(birds[0]);
+        }
     }
 }

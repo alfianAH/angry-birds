@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bird : MonoBehaviour
 {
-    public enum BirdState{ Idle, Thrown}
+    private enum BirdState{ Idle, Thrown}
     public GameObject parent;
     public Rigidbody2D birdRigidbody;
     public CircleCollider2D birdCollider;
-
+    
+    public UnityAction onBirdDestroyed = delegate {  };
+    
     private BirdState birdState;
     private float minVelocity = 0.05f;
     private bool flagDestroy = false;
@@ -37,7 +41,12 @@ public class Bird : MonoBehaviour
             StartCoroutine(DestroyAfter(2));
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        onBirdDestroyed();
+    }
+
     private IEnumerator DestroyAfter(float seconds)
     {
         yield return new WaitForSeconds(seconds);
