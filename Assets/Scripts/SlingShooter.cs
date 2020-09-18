@@ -3,6 +3,7 @@
 public class SlingShooter : MonoBehaviour
 {
     public CircleCollider2D collider;
+    public LineRenderer trajectory;
     private Vector2 startPos;
 
     [SerializeField] private float radius = 0.75f;
@@ -26,6 +27,8 @@ public class SlingShooter : MonoBehaviour
         
         // Set sling shooter to start position
         gameObject.transform.position = startPos;
+
+        trajectory.enabled = false;
     }
 
     private void OnMouseDrag()
@@ -37,6 +40,38 @@ public class SlingShooter : MonoBehaviour
         if (dir.sqrMagnitude > radius)
             dir = dir.normalized * radius;
         transform.position = startPos + dir;
+
+        float distance = Vector2.Distance(startPos, transform.position);
+        
+        if (!trajectory.enabled) trajectory.enabled = true;
+        DisplayTrajectory(distance);
+    }
+
+    private void DisplayTrajectory(float distance)
+    {
+        if(bird == null) return;
+
+        Vector2 velocity = startPos - (Vector2) transform.position;
+        int segmentCount = 5;
+        Vector2[] segments = new Vector2[segmentCount];
+        
+        // Trajectory's start position is mouse's current position
+        segments[0] = transform.position;
+        
+        // Start velocity
+        Vector2 segVelocity = velocity * throwSpeed * distance;
+        for (int i = 1; i < segmentCount; i++)
+        {
+            float elapsedTime = i * Time.fixedDeltaTime * 5;
+            segments[i] = segments[0] + segVelocity * elapsedTime +
+                          0.5f * Physics2D.gravity * Mathf.Pow(elapsedTime, 2);
+        }
+        
+        trajectory.positionCount = segmentCount;
+        for (int i = 0; i < segmentCount; i++)
+        {
+            trajectory.SetPosition(i, segments[i]);
+        }
     }
 
     public void InitiateBird(Bird bird)
