@@ -5,16 +5,19 @@ using UnityEngine.Events;
 
 public class Bird : MonoBehaviour
 {
-    private enum BirdState{ Idle, Thrown}
+    public  enum BirdState{ Idle, Thrown, HitSomething}
     public GameObject parent;
     public Rigidbody2D birdRigidbody;
     public CircleCollider2D birdCollider;
     
     public UnityAction onBirdDestroyed = delegate {  };
+    public UnityAction<Bird> onBirdShot = delegate {  };
     
     private BirdState birdState;
     private float minVelocity = 0.05f;
     private bool flagDestroy = false;
+
+    public BirdState State => birdState;
 
     private void Start()
     {
@@ -31,7 +34,8 @@ public class Bird : MonoBehaviour
             birdState = BirdState.Thrown;
         }
 
-        if (birdState == BirdState.Thrown &&
+        if ((birdState == BirdState.Thrown ||
+            birdState == BirdState.HitSomething) &&
             birdRigidbody.velocity.sqrMagnitude < minVelocity &&
             !flagDestroy)
         {
@@ -42,9 +46,15 @@ public class Bird : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        birdState = BirdState.HitSomething;
+    }
+
     private void OnDestroy()
     {
-        onBirdDestroyed();
+        if(birdState == BirdState.Thrown || birdState == BirdState.HitSomething)
+            onBirdDestroyed();
     }
 
     private IEnumerator DestroyAfter(float seconds)
@@ -75,5 +85,6 @@ public class Bird : MonoBehaviour
         birdCollider.enabled = true;
         birdRigidbody.bodyType = RigidbodyType2D.Dynamic;
         birdRigidbody.velocity = velocity * speed * distance;
+        onBirdShot(this);
     }
 }
