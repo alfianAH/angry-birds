@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Bird : MonoBehaviour
 {
     public  enum BirdState{ Idle, Thrown, HitSomething}
-    public GameObject parent;
-    public Rigidbody2D birdRigidbody;
-    public CircleCollider2D birdCollider;
+    private Rigidbody2D birdRigidbody;
+    private CircleCollider2D birdCollider;
     
     public UnityAction onBirdDestroyed = delegate {  };
     public UnityAction<Bird> onBirdShot = delegate {  };
@@ -18,9 +16,13 @@ public class Bird : MonoBehaviour
     private bool flagDestroy = false;
 
     public BirdState State => birdState;
+    protected Rigidbody2D BirdRigidbody => birdRigidbody;
 
     private void Start()
     {
+        birdCollider = GetComponent<CircleCollider2D>();
+        birdRigidbody = GetComponent<Rigidbody2D>();
+        
         birdRigidbody.bodyType = RigidbodyType2D.Kinematic;
         birdCollider.enabled = false;
         birdState = BirdState.Idle;
@@ -55,6 +57,11 @@ public class Bird : MonoBehaviour
     {
         if(birdState == BirdState.Thrown || birdState == BirdState.HitSomething)
             onBirdDestroyed();
+    }
+
+    public virtual void OnTap()
+    {
+        // Do nothing
     }
 
     private IEnumerator DestroyAfter(float seconds)

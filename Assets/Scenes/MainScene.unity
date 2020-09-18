@@ -347,6 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202363104}
   - component: {fileID: 202363103}
+  - component: {fileID: 202363105}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -375,6 +376,7 @@ MonoBehaviour:
   - {fileID: 607482239}
   enemies:
   - {fileID: 1452639420}
+  tapCollider: {fileID: 202363105}
 --- !u!4 &202363104
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +391,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &202363105
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202363102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 12}
+  m_EdgeRadius: 0
 --- !u!1 &364307144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4431414380160866724, guid: 3f60551be8ec56543829c00b8301f99b,
@@ -526,7 +554,7 @@ GameObject:
   - component: {fileID: 413691199}
   - component: {fileID: 413691202}
   m_Layer: 0
-  m_Name: RedBird (1)
+  m_Name: YellowBird (1)
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,7 +650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8d65fab5aa828d7439359b962c57d921, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 876a7e9d1b352d341ada0f78cef0f0fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -642,12 +670,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 413691197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 80cbfe1c106c29c44861d5e375ea71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  birdRigidbody: {fileID: 413691200}
-  birdCollider: {fileID: 413691199}
+  boostForce: 100
+  hasBoost: 0
 --- !u!1 &475276878
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,9 +924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  birdRigidbody: {fileID: 607482241}
-  birdCollider: {fileID: 607482240}
 --- !u!58 &607482240
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1049,7 +1073,7 @@ GameObject:
   - component: {fileID: 1040536360}
   - component: {fileID: 1040536363}
   m_Layer: 0
-  m_Name: RedBird (2)
+  m_Name: YellowBird (2)
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8d65fab5aa828d7439359b962c57d921, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 876a7e9d1b352d341ada0f78cef0f0fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1165,12 +1189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1040536358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 80cbfe1c106c29c44861d5e375ea71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  birdRigidbody: {fileID: 1040536361}
-  birdCollider: {fileID: 1040536360}
+  boostForce: 100
+  hasBoost: 0
 --- !u!1 &1068575557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1336,7 @@ GameObject:
   - component: {fileID: 1100297614}
   - component: {fileID: 1100297618}
   m_Layer: 0
-  m_Name: RedBird
+  m_Name: YellowBird
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1395,7 +1418,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8d65fab5aa828d7439359b962c57d921, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 876a7e9d1b352d341ada0f78cef0f0fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1429,12 +1452,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1100297613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4675a6f539888444cb353e2a27ea1df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 80cbfe1c106c29c44861d5e375ea71e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  birdRigidbody: {fileID: 1100297615}
-  birdCollider: {fileID: 1100297614}
+  boostForce: 100
+  hasBoost: 0
 --- !u!1 &1452639415
 GameObject:
   m_ObjectHideFlags: 0
