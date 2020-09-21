@@ -2,8 +2,9 @@
 
 public class BlackBird : Bird
 {
-    [SerializeField] private float explosionForce = 50f, explosionRadius = 5f;
     [SerializeField] private bool hasExplode = false;
+    [SerializeField] private GameObject explosionParticle,
+        explosion;
     
     public override void OnTap()
     {
@@ -14,17 +15,14 @@ public class BlackBird : Bird
     {
         if((State == BirdState.HitSomething || State == BirdState.Thrown) && !hasExplode)
         {
-            Debug.Log("Boom");
-            Vector3 explosionPosition = transform.position;
-            AddExplosionForce(explosionForce, explosionPosition, explosionRadius);
             hasExplode = true;
+            
+            explosion.SetActive(true);
+            GameObject explosionDuplicate = Instantiate(explosionParticle, transform.position, Quaternion.identity, transform.parent);
+            ParticleSystem explosionParticleDuplicate = explosionDuplicate.GetComponent<ParticleSystem>();
+            explosionParticleDuplicate.Play();
+            
+            Destroy(gameObject, explosionParticleDuplicate.main.duration);
         }
-    }
-
-    private void AddExplosionForce(float explosionForce, Vector3 explosionPosition, float explosionRadius)
-    {
-        var dir = BirdRigidbody.transform.position = explosionPosition;
-        float wearoff = 1 - dir.magnitude / explosionRadius;
-        BirdRigidbody.AddForce(dir.normalized * explosionForce * wearoff);
     }
 }

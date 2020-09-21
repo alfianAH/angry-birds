@@ -14,15 +14,15 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < birds.Count; i++)
+        foreach (var bird in birds)
         {
-            birds[i].onBirdDestroyed += ChangeBird;
-            birds[i].onBirdShot += AssignTrail;
+            bird.onBirdDestroyed += ChangeBird;
+            bird.onBirdShot += AssignTrail;
         }
 
-        for (int i = 0; i < enemies.Count; i++)
+        foreach (var enemy in enemies)
         {
-            enemies[i].onEnemyDestroyed += CheckGameEnd;
+            enemy.onEnemyDestroyed += CheckGameEnd;
         }
         
         tapCollider.enabled = false;
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void AssignTrail(Bird bird)
+    private void AssignTrail(Bird bird)
     {
         trailController.SetBird(bird);
         StartCoroutine(trailController.SpawnTrail());
@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void CheckGameEnd(GameObject destroyedEnemy)
+    private void CheckGameEnd(GameObject destroyedEnemy)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
