@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         if (isGameEnded) return;
         
         birds.RemoveAt(0);
-        
+        shotBird = birds[0];
         if (birds.Count > 0)
         {
             slingShooter.InitiateBird(birds[0]);

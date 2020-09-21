@@ -28,9 +28,9 @@ public class Enemy : MonoBehaviour
         else if (other.gameObject.CompareTag("Obstacle"))
         {
             float damage = other.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 10;
-            Debug.Log("Damage: " + damage);
+            // Debug.Log("Damage: " + damage);
             health -= damage;
-            Debug.Log("Health: " + health);
+            // Debug.Log("Health: " + health);
             if (health <= 0)
             {
                 isHit = true;
