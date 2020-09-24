@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde9c225d9dd98e4cb304a6e4ec628d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScriptableObject: {fileID: 11400000, guid: bf755a53589cf0949a835cc3185a09ef,
+  levelScriptableObject: {fileID: 11400000, guid: ac66166d60caeea468198ac40969fa76,
     type: 2}
   levelText: {fileID: 1439946886}
   detailsManager: {fileID: 103488664}
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde9c225d9dd98e4cb304a6e4ec628d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScriptableObject: {fileID: 11400000, guid: bf755a53589cf0949a835cc3185a09ef,
+  levelScriptableObject: {fileID: 11400000, guid: 4d7d52b403129114abfbe0894d40f732,
     type: 2}
   levelText: {fileID: 1027644786}
   detailsManager: {fileID: 103488664}

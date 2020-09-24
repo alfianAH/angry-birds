@@ -26,7 +26,7 @@ public class Obstacle : MonoBehaviour
             isHit = true;
             Destroy(gameObject);
         }
-        else
+        else if(other.gameObject.CompareTag("Enemy"))
         {
             float damage = other.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * 10;
             // Debug.Log("Damage: " + damage);
