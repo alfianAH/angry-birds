@@ -27,4 +27,11 @@ public class GameManager : MonoBehaviour
         resumeButton.SetActive(false);
         panelTitle.text = "GAME COMPLETED";
     }
+    
+    public void GameFailed()
+    {
+        panel.SetActive(true);
+        resumeButton.SetActive(false);
+        panelTitle.text = "GAME FAILED";
+    }
 }

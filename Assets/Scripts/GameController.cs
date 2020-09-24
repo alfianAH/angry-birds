@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -53,10 +54,17 @@ public class GameController : MonoBehaviour
         if (isGameEnded) return;
         
         birds.RemoveAt(0);
-        shotBird = birds[0];
-        if (birds.Count > 0)
+        try
         {
-            slingShooter.InitiateBird(birds[0]);
+            shotBird = birds[0];
+            if (birds.Count > 0)
+            {
+                slingShooter.InitiateBird(birds[0]);
+            }
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            gameManager.GameFailed();
         }
     }
 
