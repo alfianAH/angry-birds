@@ -6,14 +6,11 @@ public class Enemy : MonoBehaviour
     public float health = 50f;
     public UnityAction<GameObject> onEnemyDestroyed = delegate { };
 
-    private bool isHit = false;
+    private bool isHit;
 
     private void OnDestroy()
     {
-        if (isHit)
-        {
-            onEnemyDestroyed(gameObject);
-        }
+        onEnemyDestroyed(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     private Bird shotBird;
-    private bool isGameEnded = false;
+    private bool isGameEnded;
 
     private void Start()
     {
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void CheckGameEnd(GameObject destroyedEnemy)
+    public void CheckGameEnd(GameObject destroyedEnemy)
     {
         for (int i = 0; i < enemies.Count; i++)
         {
