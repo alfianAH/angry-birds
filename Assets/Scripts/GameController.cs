@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public List<Enemy> enemies;
     public BoxCollider2D tapCollider;
 
+    [SerializeField] private GameManager gameManager;
+
     private Bird shotBird;
     private bool isGameEnded = false;
 
@@ -72,6 +74,7 @@ public class GameController : MonoBehaviour
         if (enemies.Count == 0)
         {
             isGameEnded = true;
+            gameManager.FinishGame();
         }
     }
 }
