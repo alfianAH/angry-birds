@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
@@ -9,9 +8,13 @@ public class Obstacle : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameObject ashParticle = Instantiate(obstacleDestroyParticle, transform.position, Quaternion.identity, transform.parent);
-        ParticleSystem explosionParticleDuplicate = ashParticle.GetComponent<ParticleSystem>();
-        explosionParticleDuplicate.Play();
+        if(isHit)
+        {
+            GameObject ashParticle = Instantiate(obstacleDestroyParticle, transform.position, Quaternion.identity,
+                transform.parent);
+            ParticleSystem explosionParticleDuplicate = ashParticle.GetComponent<ParticleSystem>();
+            explosionParticleDuplicate.Play();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
