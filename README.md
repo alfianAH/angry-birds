@@ -14,7 +14,7 @@ Angry birds are a game where birds are angry ~~and want to kill pig (lol)~~.
 2. Go to your command prompt or terminal. (Make sure you have installed git on your computer)
 3. Type ```git clone https://github.com/alfianAH/angry-birds.git```
 4. And finally it will be cloned to your computer.
-5. Open it with Unity (Recommended Unity 2019.3)
+5. Open it with Unity (Recommended Unity 2019.4.24f1)
 
 ## How to play
 1. Just pull and release your bird and go brrrr.
