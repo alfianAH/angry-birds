@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void CheckGameEnd(GameObject destroyedEnemy)
+    private void CheckGameEnd(GameObject destroyedEnemy)
     {
         for (int i = 0; i < enemies.Count; i++)
         {

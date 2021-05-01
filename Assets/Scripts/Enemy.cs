@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     public float health = 50f;
     public UnityAction<GameObject> onEnemyDestroyed = delegate { };
 
-    private bool isHit;
+    // private bool isHit;
 
     private void OnDestroy()
     {
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Bird"))
         {
-            isHit = true;
+            // isHit = true;
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Obstacle"))
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
             // Debug.Log("Health: " + health);
             if (health <= 0)
             {
-                isHit = true;
+                // isHit = true;
                 Destroy(gameObject);
             }
         }

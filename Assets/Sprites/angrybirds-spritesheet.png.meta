@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 6eabbca5ed0787248b9d272bf572b701
+guid: 3faf2e14465ac174b9df600b8ff9bc0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8191739510646017925
-    second: playBtn
+      213: -2234744340037037034
+    second: restart
   - first:
-      213: 3713549098536957005
-    second: pauseBtn
+      213: -5965146652015900979
+    second: play
   - first:
-      213: -480254276019886394
-    second: resumeBtn
+      213: 5977106480046681511
+    second: pause
   - first:
-      213: -6460607209241108654
-    second: replayBtn
+      213: 5641361675982571426
+    second: lobby
   - first:
-      213: 2958514102543403041
-    second: lobbyBtn
+      213: -5489447907683558876
+    second: back
   - first:
-      213: 1008705478319212569
-    second: homeBtn
-  - first:
-      213: -3219683103784253410
+      213: 1067601277894939511
     second: levelHolder
   - first:
-      213: 5830344958925785552
-    second: nextLevelBtn
+      213: -6848597127157087924
+    second: continue
   - first:
-      213: 650656284835190746
-    second: yellowBg
+      213: -4107433947397218977
+    second: home
   - first:
-      213: 4009284081192125275
-    second: backBtn
+      213: 4293018453113856992
+    second: playLogo
+  - first:
+      213: 1523141266046736075
+    second: yellowBox
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playBtn
+      name: restart
       rect:
         serializedVersion: 2
-        x: 41
-        y: 612
-        width: 189
-        height: 116
+        x: 1693
+        y: 602
+        width: 102
+        height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,41 +131,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7079671158115e80800000000000000
-      internalID: -8191739510646017925
+      spriteID: 6141748ecd79cf0e0800000000000000
+      internalID: -2234744340037037034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pauseBtn
+      name: play
       rect:
         serializedVersion: 2
-        x: 47
-        y: 202
-        width: 58
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1693
+        y: 718
+        width: 103
+        height: 103
+      alignment: 9
+      pivot: {x: 1.0251303, y: -0.04273794}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d44744ada3d298330800000000000000
-      internalID: 3713549098536957005
+      spriteID: dc64b7589ba873da0800000000000000
+      internalID: -5965146652015900979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: resumeBtn
+      name: pause
       rect:
         serializedVersion: 2
-        x: 45
-        y: 474
-        width: 60
-        height: 58
+        x: 1583
+        y: 995
+        width: 79
+        height: 79
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c6e8fbc74bc559f0800000000000000
-      internalID: -480254276019886394
+      spriteID: 7ad2edfeca2f2f250800000000000000
+      internalID: 5977106480046681511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: replayBtn
+      name: lobby
       rect:
         serializedVersion: 2
-        x: 45
-        y: 137
-        width: 60
-        height: 57
+        x: 1461
+        y: 987
+        width: 103
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25f1bd319ff4756a0800000000000000
-      internalID: -6460607209241108654
+      spriteID: 2a7817a1e842a4e40800000000000000
+      internalID: 5641361675982571426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lobbyBtn
+      name: back
       rect:
         serializedVersion: 2
-        x: 178
-        y: 348
-        width: 55
-        height: 56
+        x: 1694
+        y: 488
+        width: 102
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,29 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1284511c6e0ce0920800000000000000
-      internalID: 2958514102543403041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: homeBtn
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 407
-        width: 56
-        height: 55
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9180536c944affd00800000000000000
-      internalID: 1008705478319212569
+      spriteID: 42a9289563091d3b0800000000000000
+      internalID: -5489447907683558876
       vertices: []
       indices: 
       edges: []
@@ -258,10 +225,10 @@ TextureImporter:
       name: levelHolder
       rect:
         serializedVersion: 2
-        x: 493
-        y: 544
-        width: 63
-        height: 63
+        x: 1455
+        y: 1116
+        width: 98
+        height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e18cc9596436153d0800000000000000
-      internalID: -3219683103784253410
+      spriteID: 7735ea2b4b1e0de00800000000000000
+      internalID: 1067601277894939511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nextLevelBtn
+      name: continue
       rect:
         serializedVersion: 2
-        x: 179
-        y: 543
-        width: 59
-        height: 59
+        x: 351
+        y: 373
+        width: 134
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d9c2c289db89e050800000000000000
-      internalID: 5830344958925785552
+      spriteID: c418a02c235e4f0a0800000000000000
+      internalID: -6848597127157087924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: yellowBg
+      name: home
       rect:
         serializedVersion: 2
-        x: 654
-        y: 651
-        width: 33
-        height: 75
+        x: 711
+        y: 1095
+        width: 67
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,29 +278,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad71a789178970900800000000000000
-      internalID: 650656284835190746
+      spriteID: f5d120346967ff6c0800000000000000
+      internalID: -4107433947397218977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: backBtn
+      name: playLogo
       rect:
         serializedVersion: 2
-        x: 695
-        y: 491
-        width: 51
-        height: 45
+        x: 966
+        y: 1130
+        width: 236
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b53c51731a6d3a730800000000000000
-      internalID: 4009284081192125275
+      spriteID: 0e36c08a98dd39b30800000000000000
+      internalID: 4293018453113856992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yellowBox
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 492
+        width: 357
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 25, z: 20, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6547959e8432510800000000000000
+      internalID: 1523141266046736075
       vertices: []
       indices: 
       edges: []
