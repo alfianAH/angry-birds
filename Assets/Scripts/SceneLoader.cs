@@ -20,6 +20,17 @@ public class SceneLoader : MonoBehaviour
         Time.timeScale = 1f; // Set time to normal
         StartCoroutine(LoadNewScene(sceneName));
     }
+    
+    /// <summary>
+    /// Restart current scene
+    /// </summary>
+    public void RestartScene()
+    {
+        Time.timeScale = 1f; // Set time to normal
+        StartCoroutine(LoadNewScene(
+            SceneManager.GetActiveScene().name)
+        );
+    }
 
     private IEnumerator LoadNewScene(string sceneName)
     {
