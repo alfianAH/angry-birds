@@ -614,12 +614,12 @@ GameObject:
   - component: {fileID: 7637972220895136306}
   - component: {fileID: 4743327780636943902}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Pause Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7637972220895136308
 RectTransform:
   m_ObjectHideFlags: 0
