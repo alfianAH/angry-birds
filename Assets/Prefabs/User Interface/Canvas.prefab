@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dbae4502c8a54db65a63be876347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelTitle: {fileID: 0}
+  panelTitle: {fileID: 6184163035631513976}
   panel: {fileID: 7637972220895136311}
   resumeButton: {fileID: 7637972221112896798}
 --- !u!114 &948861466595419849
