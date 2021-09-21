@@ -872,7 +872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slingShooter: {fileID: 475276881}
-  trailController: {fileID: 109088784}
   birds:
   - {fileID: 2002145}
   - {fileID: 995683909}
@@ -896,7 +895,6 @@ MonoBehaviour:
   - {fileID: 739848690}
   - {fileID: 2104526226}
   tapCollider: {fileID: 202363105}
-  gameManager: {fileID: 720503177}
 --- !u!4 &202363104
 Transform:
   m_ObjectHideFlags: 0
@@ -2752,20 +2750,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Level5
       objectReference: {fileID: 0}
+    - target: {fileID: 1899778046860445679, guid: 753701ef1503cf64791743ad7fee8da6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: SelectLevelScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 753701ef1503cf64791743ad7fee8da6, type: 3}
---- !u!114 &720503177 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7637972219477239487, guid: 753701ef1503cf64791743ad7fee8da6,
-    type: 3}
-  m_PrefabInstance: {fileID: 720503176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843dbae4502c8a54db65a63be876347a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &727213531
 GameObject:
   m_ObjectHideFlags: 0
