@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrailController : MonoBehaviour
+public class TrailController : SingletonBaseClass<TrailController>
 {
     public GameObject trail;
     public Bird targetBird;

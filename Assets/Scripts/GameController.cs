@@ -5,18 +5,20 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public SlingShooter slingShooter;
-    public TrailController trailController;
     public List<Bird> birds;
     public List<Enemy> enemies;
     public BoxCollider2D tapCollider;
 
-    [SerializeField] private GameManager gameManager;
-
+    private GameManager gameManager;
+    private TrailController trailController;
     private Bird shotBird;
     private bool isGameEnded;
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
+        trailController = TrailController.Instance;
+        
         foreach (var bird in birds)
         {
             bird.onBirdDestroyed += ChangeBird;

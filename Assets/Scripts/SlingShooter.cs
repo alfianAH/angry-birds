@@ -20,8 +20,9 @@ public class SlingShooter : MonoBehaviour
     private void OnMouseUp()
     {
         collider.enabled = false;
-        Vector2 velocity = startPos - (Vector2) transform.position;
-        float distance = Vector2.Distance(startPos, transform.position);
+        var position = transform.position;
+        Vector2 velocity = startPos - (Vector2) position;
+        float distance = Vector2.Distance(startPos, position);
         
         bird.Shoot(velocity, distance, throwSpeed);
         
